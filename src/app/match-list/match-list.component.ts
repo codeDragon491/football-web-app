@@ -11,10 +11,8 @@ import { CompetitionService } from '../competition.service';
 })
 export class MatchListComponent implements OnInit {
   competition: Competition;
-  matches: any[];
-  numberofMatches: number;
+  matches: Array<any>;
   limit: number;
-  //public state = '';
 
   constructor(
     private router: Router,
@@ -38,9 +36,9 @@ export class MatchListComponent implements OnInit {
         //console.log(competition);
         this.competition = competition.competition;
         this.matches = competition.matches;
-        this.numberofMatches = competition.matches.length;
+        const numberofMatches = competition.matches.length;
         //console.log(this.numberofMatches);
-        this.limit = this.numberofMatches / 2;
+        this.limit = numberofMatches / 2;
         //console.log(competition.matches);
       },
       error => {

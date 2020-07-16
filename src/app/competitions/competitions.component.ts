@@ -10,7 +10,6 @@ import { Router } from '@angular/router';
 })
 export class CompetitionsComponent implements OnInit {
   competitions: Competition[];
-  public state = '';
   constructor(
     private router: Router,
     private CompetitionService: CompetitionService
@@ -19,7 +18,7 @@ export class CompetitionsComponent implements OnInit {
     this.CompetitionService.getCompetitions().subscribe(
       competitions => {
         //console.log(competitions.competitions);
-        let availableCompetitions = competitions.competitions.filter(function(
+        const availableCompetitions = competitions.competitions.filter(function(
           competition
         ) {
           return (
@@ -37,13 +36,13 @@ export class CompetitionsComponent implements OnInit {
             competition.id === 2000
           );
         });
-        let filteredCompetitions = [];
+        const filteredCompetitions = [];
         availableCompetitions.filter(function(competition) {
-          let newProperties = {
+          const newProperties = {
             country: competition.area.name,
             ensignUrl: competition.area.ensignUrl
           };
-          let returnedTarget = Object.assign(competition, newProperties);
+          const returnedTarget = Object.assign(competition, newProperties);
           filteredCompetitions.push(returnedTarget);
           //console.log(returnedTarget);
         });
