@@ -16,7 +16,7 @@ export class MatchDetailComponent implements OnInit {
     //console.log(window.history.state.match);
     if (window.history.state.match) {
       this.match = window.history.state.match;
-      let match = JSON.stringify(this.match);
+      const match = JSON.stringify(this.match);
       localStorage.setItem('match', match);
     } else {
       this.match = JSON.parse(localStorage.getItem('match'));
