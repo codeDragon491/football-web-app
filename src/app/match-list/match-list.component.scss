@@ -1,0 +1,47 @@
+.competiton-container {
+    h1 {
+        text-align: center;
+    }
+}
+
+.list-container {
+    display: flex;
+    margin-top: 60px;
+    .list-item {
+        position: relative;
+        cursor: pointer;
+        .live-icon {
+            width: 40px;
+            position: absolute;
+            left: 0;
+            top: 0;
+        }
+        .status {
+            font-weight: 600;
+        }
+    }
+    .list-item:focus,
+    .list-item:hover {
+        background: rgba(0, 0, 0, 0.4) !important;
+    }
+}
+
+.match {
+    font-size: 16px;
+    padding: 5px 0;
+    border-bottom: 1px solid gray;
+}
+
+.match-subheader {
+    font-size: 24px;
+    padding-bottom: 10px;
+    letter-spacing: 1px;
+}
+
+.back-link {
+    padding-top: 10px;
+    color: #24292e;
+    position: absolute;
+    margin-top: 10px;
+    left: 10;
+}

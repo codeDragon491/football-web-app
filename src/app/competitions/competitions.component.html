@@ -1,0 +1,19 @@
+<!-- Highlight Card -->
+<div *ngIf="competitions" class="card highlight-card card-small">
+    <h1>Competitions</h1>
+</div>
+<mat-spinner *ngIf="!competitions"></mat-spinner>
+<div *ngIf="competitions" class="competition-row">
+    <mat-card *ngFor="let competition of competitions" class="competition-card" (click)="navigate($event, competition)">
+        <mat-card-header>
+            <mat-card-title>{{ competition.name }}</mat-card-title>
+            <mat-card-subtitle>Area: {{ competition.country }} </mat-card-subtitle>
+        </mat-card-header>
+        <img *ngIf="competition.ensignUrl" mat-card-image :src="{{ competition.ensignUrl }}" />
+        <img *ngIf="competition.emblemUrl" mat-card-image :src="{{ competition.emblemUrl }}" />
+        <mat-card-content> </mat-card-content>
+        <mat-card-actions class="actions">
+            <button mat-flat-button color="accent">Go to competition</button>
+        </mat-card-actions>
+    </mat-card>
+</div>
