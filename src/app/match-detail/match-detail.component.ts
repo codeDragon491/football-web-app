@@ -10,7 +10,6 @@ import { Router } from '@angular/router';
 export class MatchDetailComponent implements OnInit {
   match: any;
   constructor(
-    private CompetitionService: CompetitionService,
     private router: Router
   ) {}
   getMatch(): void {
