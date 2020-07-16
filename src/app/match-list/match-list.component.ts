@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute, Router } from '@angular/router';
-import { Location } from '@angular/common';
+import { Router } from '@angular/router';
 
 import { Competition } from '../competition';
 import { CompetitionService } from '../competition.service';
@@ -18,10 +17,8 @@ export class MatchListComponent implements OnInit {
   //public state = '';
 
   constructor(
-    private route: ActivatedRoute,
     private router: Router,
     private competitionService: CompetitionService,
-    private location: Location
   ) {}
 
   ngOnInit(): void {
