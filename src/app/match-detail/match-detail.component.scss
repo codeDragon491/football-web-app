@@ -1,0 +1,36 @@
+.match-container {
+    width: 100%;
+    height: 100%;
+}
+
+.mat-card-header .mat-card-title {
+    font-size: 28px;
+    padding-bottom: 10px;
+}
+
+.mat-card-subtitle {
+    font-size: 22px;
+}
+
+.mat-card-content {
+    text-align: center;
+    margin: 0 16px;
+    h4 {
+        font-size: 18px;
+        text-align: center;
+        font-weight: 500;
+    }
+    font-size: 16px;
+}
+
+.label {
+    font-weight: 500;
+}
+
+.back-link {
+    padding: 10px 0;
+    color: #24292e;
+    position: absolute;
+    margin-top: 10px;
+    left: 10;
+}

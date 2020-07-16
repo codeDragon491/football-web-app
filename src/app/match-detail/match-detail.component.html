@@ -1,0 +1,32 @@
+<mat-spinner *ngIf="!match"></mat-spinner>
+<div *ngIf="match" class="match-container">
+    <mat-card class="match-card">
+        <mat-card-header>
+            <mat-card-title>{{ match.awayTeam.name }} – {{ match.homeTeam.name }}</mat-card-title>
+            <mat-card-subtitle>{{ match.name }} </mat-card-subtitle>
+        </mat-card-header>
+        <img mat-card-image width="300" :src="/assets/img/FA-Cup-odds-winner-1067526.jpg" />
+        <mat-card-content>
+            <h4>Score</h4>
+            <p *ngIf="match.score.winner === 'AWAY_TEAM'">
+                <span class="label">Winner:</span> {{ match.awayTeam.name }}
+            </p>
+            <p *ngIf="match.score.winner === 'HOME_TEAM'">
+                <span class="label">Winner:</span> {{ match.homeTeam.name }}
+            </p>
+            <p>
+                <span class="label "> Halftime: </span> {{ match.awayTeam.name }} : {{ match.score.halfTime.awayTeam }} — {{ match.homeTeam.name }} : {{ match.score.halfTime.homeTeam }}
+            </p>
+            <p>
+                <span class="label "> Fulltime: </span> {{ match.awayTeam.name }} : {{ match.score.fullTime.awayTeam }} — {{ match.homeTeam.name }} : {{ match.score.fullTime.homeTeam }}
+            </p>
+            <h4>Status</h4>
+            <p>
+                {{ match.status }}
+            </p>
+            <h4>Dates</h4>
+            <p>{{ match.season.startDate }} — {{ match.season.endDate }}</p>
+        </mat-card-content>
+    </mat-card>
+    <a class="back-link" (click)="goBack(match.name)">Go back to matches</a>
+</div>

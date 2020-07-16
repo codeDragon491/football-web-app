@@ -1,0 +1,14 @@
+{
+  "projects": {
+    "default": "football-web-app-betsson-group"
+  },
+  "targets": {
+    "football-web-app-betsson-group": {
+      "hosting": {
+        "football-web-app": [
+          "football-web-app-betsson-group"
+        ]
+      }
+    }
+  }
+}

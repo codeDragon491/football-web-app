@@ -1,0 +1,39 @@
+<mat-spinner *ngIf="!competition"></mat-spinner>
+<div *ngIf="competition" class="competiton-container">
+    <h1>{{ competition.name }}</h1>
+    <div *ngIf="competition" class="list-container">
+        <div>
+            <div class="match-subheader" mat-subheader>Matches</div>
+            <cdk-virtual-scroll-viewport itemSize="18" style="height:80vh;width:40vw;background-color: white;">
+                <mat-list *cdkVirtualFor="let match of (matches | slice: 0:limit)">
+                    <mat-list-item (click)="navigate($event, competition, match)" class="list-item">
+                        <div class="match" mat-line>
+                            {{ match.awayTeam.name }} - {{ match.homeTeam.name }} /
+                            <span class="status">{{ match.status }}</span>
+                        </div>
+                        <!--<img *ngIf="match.status === LIVE" class="live-icon" src="/assets/img/Vanilla-1s-152px.gif" alt="live match" />-->
+                    </mat-list-item>
+                    <mat-divider></mat-divider>
+                </mat-list>
+            </cdk-virtual-scroll-viewport>
+        </div>
+        <div>
+            <div class="match-subheader" style="margin-left:20px;" mat-subheader>
+                Matches
+            </div>
+            <cdk-virtual-scroll-viewport itemSize="18" style="height:80vh;width:40vw;margin-left:20px;background-color: white;">
+                <mat-list *cdkVirtualFor="let match of (matches | slice: limit:-1)">
+                    <mat-list-item (click)="navigate($event, competition, match)" class="list-item">
+                        <div class="match" mat-line>
+                            {{ match.awayTeam.name }} - {{ match.homeTeam.name }} /
+                            <span class="status">{{ match.status }}</span>
+                        </div>
+                        <img *ngIf="match.status === LIVE" class="live-icon" src="/assets/img/Vanilla-1s-152px.gif" alt="live match" />
+                    </mat-list-item>
+                    <mat-divider></mat-divider>
+                </mat-list>
+            </cdk-virtual-scroll-viewport>
+        </div>
+    </div>
+    <a class="back-link" routerLink="/">Go back to competitions</a>
+</div>
