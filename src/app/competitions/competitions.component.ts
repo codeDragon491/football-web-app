@@ -15,6 +15,7 @@ export class CompetitionsComponent implements OnInit {
     private CompetitionService: CompetitionService
   ) {}
   getCompetitions(): void {
+    const competitionIds = [2013, 2016, 2021, 2001, 2018, 2015, 2002, 2019, 2003, 2017, 2014, 2000 ];
     this.CompetitionService.getCompetitions().subscribe(
       competitions => {
         //console.log(competitions.competitions);
@@ -22,18 +23,7 @@ export class CompetitionsComponent implements OnInit {
           competition
         ) {
           return (
-            competition.id === 2013 ||
-            competition.id === 2016 ||
-            competition.id === 2021 ||
-            competition.id === 2001 ||
-            competition.id === 2018 ||
-            competition.id === 2015 ||
-            competition.id === 2002 ||
-            competition.id === 2019 ||
-            competition.id === 2003 ||
-            competition.id === 2017 ||
-            competition.id === 2014 ||
-            competition.id === 2000
+            competitionIds.includes(competition.id)
           );
         });
         const filteredCompetitions = [];

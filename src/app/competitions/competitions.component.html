@@ -9,8 +9,8 @@
             <mat-card-title>{{ competition.name }}</mat-card-title>
             <mat-card-subtitle>Area: {{ competition.country }} </mat-card-subtitle>
         </mat-card-header>
-        <img *ngIf="competition.ensignUrl" mat-card-image :src="{{ competition.ensignUrl }}" />
-        <img *ngIf="competition.emblemUrl" mat-card-image :src="{{ competition.emblemUrl }}" />
+        <img *ngIf="competition.ensignUrl" mat-card-image src="{{ competition.ensignUrl }}" />
+        <img *ngIf="competition.emblemUrl" mat-card-image [src]="competition.emblemUrl" />
         <mat-card-content> </mat-card-content>
         <mat-card-actions class="actions">
             <button mat-flat-button color="accent">Go to competition</button>
