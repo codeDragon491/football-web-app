@@ -14,13 +14,17 @@ import { CompetitionService } from './competition.service';
 import { MatchListComponent } from './match-list/match-list.component';
 import { ScrollingModule } from '@angular/cdk/scrolling';
 import { MatchDetailComponent } from './match-detail/match-detail.component';
+import { ErrorPageComponent } from './error-page/error-page.component';
+import { NotFoundComponent } from './not-found/not-found.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     CompetitionsComponent,
     MatchListComponent,
-    MatchDetailComponent
+    MatchDetailComponent,
+    ErrorPageComponent,
+    NotFoundComponent
   ],
   imports: [
     BrowserModule,
